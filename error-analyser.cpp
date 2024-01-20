@@ -40,7 +40,6 @@ struct SentenceWithAnnotation {
 void printSentence(SentenceUnits content){
   string target;
   for (const auto& unit : content) {
-    // cout << unit.second.content << unit.second.status<< endl;
     if (unit.second.status == initial || unit.second.status == added || unit.second.status == modifiedTarget ){
       target = target + unit.second.content + " ";
     } 
@@ -192,23 +191,7 @@ void printCommonChanges(SentenceWithAnnotation sentence){
       printSentence(modifiedSentence);
     }
     printSentence(mergedSentence);
-
   }
-  
-  // for (auto& kv : sentence.modifiedContent[0]) {
-  //   auto range = sentence.modifiedContent[1].equal_range(kv.first);
-  //   for (auto i = range.first; i != range.second; ++i) {
-  //        if (i->second.content == kv.second.content && i->second.status == kv.second.status) {
-  //       mergedSentence.insert(kv);
-  //     }
-  //   }
-  // }
-  // printSentence(sentence.content);
-  // for(SentenceUnits modifiedSentence : sentence.modifiedContent){
-  //   cout << "A: ";
-  //   printSentence(modifiedSentence);
-  // }
-  // printSentence(mergedSentence);
 }
 
 
